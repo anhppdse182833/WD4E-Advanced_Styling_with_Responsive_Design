@@ -1,23 +1,22 @@
 /* ==========================================
-   Tablet View Media Query (772px)
+   First Media Query (772px)
    ========================================== */
 @media screen and (min-width: 772px) {
   div {
-    width: 45%;
-    display: inline-block; /* Allows divs to align horizontally side-by-side */
-    vertical-align: top;   /* Keeps top edges aligned */
+    width: 45vw;           /* Must use 45vw (viewport width units) */
+    display: inline-block; /* Required by rubric */
   }
 
   img {
-    max-height: 30vh;      /* Restricts image height to no more than 30% of viewport height */
+    max-height: 30vh;      /* Must use max-height with 30vh */
   }
 }
 
 /* ==========================================
-   Large Screen View Media Query (998px)
+   Second Media Query (998px)
    ========================================== */
 @media screen and (min-width: 998px) {
   div {
-    width: 30%;             /* Adjusts width to fit 3 divs horizontally across the screen */
+    width: 30vw;           /* Must use 30vw (viewport width units) */
   }
 }
