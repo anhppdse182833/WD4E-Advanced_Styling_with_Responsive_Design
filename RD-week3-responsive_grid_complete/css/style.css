@@ -17,16 +17,21 @@ h1, h2, p {
    ACCESSIBILITY: Skip to Main Content Link
    (Instruction: Add a working "Skip to Main Content" link)
    ========================================================== */
+/* ==========================================================
+   ACCESSIBILITY: Skip to Main Content Link
+   (Permanently visible version)
+   ========================================================== */
 .skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
+    display: block;
     background: #000;
     color: white;
-    padding: 8px;
-    z-index: 100;
-    transition: top 0.3s;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
 }
+
+/* You can delete the .skip-link:focus rule entirely since it doesn't need to move anymore */
 
 .skip-link:focus {
     top: 0;
