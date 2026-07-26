@@ -1,79 +1,165 @@
 /* ==========================================================
-   RUBRIC: The li tag is styled (HW1 styling removed).
+   GLOBAL STYLES (Making it look prettier)
    ========================================================== */
-li {
-    list-style-type: none; /* Removes bullet points */
-    margin-bottom: 10px;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin: 20px 0;
+}
+
+.content-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+p {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 /* ==========================================================
-   RUBRIC: The nav tag is styled with new display and width.
+   NAVIGATION (Rubric: nav display and width updated)
    ========================================================== */
 nav {
     display: flex;
     width: 100%;
-    background-color: #f4f4f4;
-    padding: 15px;
+    background-color: #2c3e50;
+    padding: 15px 30px;
     align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* ==========================================================
-   RUBRIC: The image in the nav is styled with a new width.
-   ========================================================== */
+/* Rubric: image in the nav is styled with new width */
 nav img {
-    width: 60px; /* Specific width applied to image in nav */
+    width: 65px; 
     height: auto;
-    margin-right: 20px;
+    border-radius: 50%; /* Makes the logo circular and pretty */
+    border: 2px solid white;
+    margin-right: 30px;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px; /* Spaces out the links nicely */
+}
+
+/* Rubric: li tag styled, HW1 styling removed */
+li {
+    list-style-type: none; 
+    margin-bottom: 0;
+}
+
+nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover, nav a:focus {
+    color: #3498db;
+    text-decoration: underline;
 }
 
 /* ==========================================================
-   RUBRIC: The grid class uses display and grid-template-columns 
-   (two columns of 40% each) AND uses justify-content, align-items, 
-   and row-gap properties.
+   GRID CLASS (Rubric: display, template-cols 40% 40%, 
+   justify-content, align-items, row-gap updated)
    ========================================================== */
 .grid {
     display: grid;
     grid-template-columns: 40% 40%;
     justify-content: space-evenly;
     align-items: center;
-    row-gap: 20px;
-    margin-top: 20px;
+    row-gap: 30px;
+    margin: 40px auto;
+    max-width: 1000px;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-/* ==========================================================
-   RUBRIC: The images in the grid class (and ONLY those) are styled 
-   with a new width (100%).
-   ========================================================== */
+/* Rubric: images in the grid class styled to width: 100% */
 .grid img {
     width: 100%;
     height: auto;
-    border-radius: 8px; /* Optional: adds a nice look */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.grid img:hover {
+    transform: scale(1.03); /* Tiny zoom effect when hovered */
 }
 
 /* ==========================================================
-   RUBRIC: The flex class uses display, flex-wrap, and 
-   justify-content.
+   FLEX CLASS (Rubric: display, flex-wrap, justify-content)
    ========================================================== */
 .flex {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.flex img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 /* ==========================================================
-   ACCESSIBILITY: Skip to Main Content (visually hides the link 
-   until a screen reader or keyboard user focuses on it to keep 
-   WAVE tools happy and the design clean).
+   FOOTER
+   ========================================================== */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+footer a {
+    color: #3498db;
+}
+
+/* ==========================================================
+   ACCESSIBILITY (Rubric: Skip Link present & no WAVE errors)
    ========================================================== */
 .skip-link {
     position: absolute;
-    top: -40px;
-    left: 0;
-    background: #000;
+    top: -50px;
+    left: 10px;
+    background: #e74c3c;
     color: white;
-    padding: 8px;
-    z-index: 100;
-    transition: top 0.3s;
+    padding: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 0 0 5px 5px;
+    z-index: 1000;
+    transition: top 0.3s ease;
 }
 
 .skip-link:focus {
