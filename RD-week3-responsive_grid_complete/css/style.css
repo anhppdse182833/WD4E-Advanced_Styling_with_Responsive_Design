@@ -1,30 +1,54 @@
 /* ==========================================================
-   GLOBAL STYLES (Optional: Keeps the site looking clean)
+   GLOBAL STYLES & TYPOGRAPHY (Making it look modern)
    ========================================================== */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: #f4f7f6;
+    color: #2c3e50;
     margin: 0;
     padding: 0;
+    line-height: 1.6;
 }
 
-h1, h2, p {
+header {
+    text-align: center; /* This perfectly centers your 80% inline-block nav */
+    padding-bottom: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+h1, h2 {
+    color: #34495e;
     text-align: center;
+    margin-top: 20px;
+}
+
+p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    color: #555;
 }
 
 /* ==========================================================
    ACCESSIBILITY: Skip to Main Content Link
-   (Permanently visible version)
+   (Permanently visible, styled nicely as a top banner)
    ========================================================== */
 .skip-link {
     display: block;
-    background: #000;
+    background: #3498db;
     color: white;
     padding: 10px;
     text-align: center;
     text-decoration: none;
     font-weight: bold;
+    letter-spacing: 1px;
+    transition: background 0.3s ease;
+}
+
+.skip-link:hover {
+    background: #2980b9;
 }
 
 /* ==========================================================
@@ -39,6 +63,30 @@ li {
 } 
 */
 
+/* WORKAROUND: Since we can't touch 'li', we style the 'ul' 
+   and 'a' tags directly to make the menu look beautiful and horizontal */
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 0;
+    margin: 15px 0 0 0;
+    list-style-type: none; /* Removes bullets safely */
+}
+
+nav a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #e74c3c;
+}
+
 /* ==========================================================
    NAV ELEMENT
    (Instruction: Change nav to use inline-block and width of about 80%)
@@ -46,9 +94,10 @@ li {
 nav {
     display: inline-block;
     width: 80%;
-    background-color: #e0e0e0; /* Optional: adds a background so you can see the 80% width */
-    padding: 10px;
-    border-radius: 5px;
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     margin: 20px auto;
 }
 
@@ -60,6 +109,10 @@ nav {
 nav img {
     width: 10%;
     height: auto;
+    border-radius: 50%; /* Makes the logo circular */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: block;
+    margin: 0 auto; /* Centers the image inside the nav */
 }
 
 /* ==========================================================
@@ -70,11 +123,12 @@ nav img {
 .grid {
     display: grid;
     grid-template-columns: 40% 40%;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
-    row-gap: 20px;
-    margin: 20px auto;
-    max-width: 1000px;
+    row-gap: 40px;
+    margin: 40px auto;
+    max-width: 1200px;
+    padding: 20px;
 }
 
 /* ==========================================================
@@ -84,7 +138,15 @@ nav img {
    ========================================================== */
 .grid img {
     width: 100%;
-    border-radius: 8px; /* Optional: Makes the images look nicer */
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Adds a nice pop-out effect when you hover over grid images */
+.grid img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
 }
 
 /* ==========================================================
@@ -95,14 +157,22 @@ nav img {
 .flex {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 20px auto;
-    max-width: 1000px;
+    justify-content: center;
+    gap: 30px; /* Provides spacing between flex items */
+    margin: 40px auto;
+    max-width: 1200px;
+    padding: 20px;
 }
 
-/* Optional styling to make sure the flex images aren't too huge */
+/* Styling for flex images to match the nice grid images */
 .flex img {
-    max-width: 45%; 
-    border-radius: 8px;
-    margin-bottom: 20px;
+    max-width: 30%;
+    min-width: 250px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.flex img:hover {
+    transform: scale(1.03);
 }
